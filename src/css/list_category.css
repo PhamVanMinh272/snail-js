@@ -1,0 +1,24 @@
+li.list-group-item {
+    padding: 10px;
+    border-right: 0;
+    border-left: 0;
+    border-top: 0;
+}
+
+li.list-group-item:last-child {
+    border-radius: 0;
+}
+
+li.list-group-item:hover {
+    color: rgb(9, 138, 250);
+    cursor: pointer;
+}
+
+
+
+li.list-group-item {
+    font-size: 12px;
+    font-weight: 300;
+    font-family: "Quicksand",sans-serif;
+    color: rgb(69, 69, 69);
+}

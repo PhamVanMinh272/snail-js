@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 // import Button from "./components/Button";
 import ListProduct from "./components/ListProduct";
 import Product from "./class_objects/product";
-
-const BASE_URL = "https://4e7ravvwtd.execute-api.us-west-2.amazonaws.com/dev";
+import ListCategory from "./components/ListCategory";
+import Header from "./components/Header";
+import BASE_URL from "./url_sets";
+import './App.css'
 
 function App() {
   // let items = ["New york", "Losangles", "Califolia", "London", "Yokyo"];
@@ -28,12 +30,25 @@ function App() {
   }, []);
 
   return (
+    
     <div className="container">
-      <ListProduct
-        products={products}
-        heading="Ống Cầu Lông"
-        onSelectItem={handleSelectItem}
-      />
+      <div className="row">
+        <Header></Header>
+      </div>
+      <div className="row">
+        <div className="col-2">
+          <ListCategory></ListCategory>
+          <br></br>
+        </div>
+        <div className="col-10">
+          <ListProduct
+            products={products}
+            heading="Ống Cầu Lông"
+            onSelectItem={handleSelectItem}
+          />
+        </div>
+      </div>
+      
       {/* {alertVisable && <Alert onClose={() => setAlertVisibility(false)}>Hello Minh</Alert>} */}
       {/* <Button onClick={() => setAlertVisibility(true)}>My button</Button> */}
     </div>

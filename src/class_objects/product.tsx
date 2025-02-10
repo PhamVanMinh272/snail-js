@@ -1,6 +1,7 @@
 interface Product {
     id: number,
-    name: string
+    name: string,
+    price: number
   }
 
 export default Product;
