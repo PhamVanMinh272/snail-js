@@ -1,9 +1,10 @@
 nav {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 a.nav-link {
     font-size: 13px;
+    color: rgb(33, 33, 33);
 }
 
 a.navbar-brand {

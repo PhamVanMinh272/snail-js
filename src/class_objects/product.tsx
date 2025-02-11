@@ -1,7 +1,11 @@
 interface Product {
     id: number,
     name: string,
-    price: number
+    price: number,
+    image?: {
+      id: number,
+      name: string,
+    }
   }
 
 export default Product;

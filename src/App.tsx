@@ -5,7 +5,7 @@ import ListProduct from "./components/ListProduct";
 import Product from "./class_objects/product";
 import ListCategory from "./components/ListCategory";
 import Header from "./components/Header";
-import BASE_URL from "./url_sets";
+import { BASE_URL } from "./url_sets";
 import './App.css'
 
 function App() {
