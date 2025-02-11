@@ -40,10 +40,10 @@ function App() {
           <ListCategory></ListCategory>
           <br></br>
         </div>
-        <div className="col-10">
+        <div className="col-10 my-content">
           <ListProduct
             products={products}
-            heading="Ống Cầu Lông"
+            heading="Trang Chủ / Ống Cầu Lông"
             onSelectItem={handleSelectItem}
           />
         </div>

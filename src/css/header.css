@@ -5,3 +5,8 @@ nav {
 a.nav-link {
     font-size: 13px;
 }
+
+a.navbar-brand {
+    color: rgb(1, 49, 92);
+    font-weight: 1000;
+}

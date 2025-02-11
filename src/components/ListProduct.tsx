@@ -1,7 +1,6 @@
 import { MouseEvent, useEffect, useState } from "react";
 import Product from "../class_objects/product";
 import profilePic from '../assets/vinastar.webp';
-import '../css/list_product.css'
 
 interface Props {
   products: Product[];
