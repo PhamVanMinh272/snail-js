@@ -15,7 +15,7 @@ function ListProduct({ products, heading, onSelectItem }: Props) {
   return (
     <>
       <p>{heading}</p>
-      {products.length === 0 && <p>Loading ...</p>}
+      {products.length === 0 && <p>Chưa có sản phẩm!</p>}
       {/* <ul className="list-group">
         {products.map((item) => (
           <li

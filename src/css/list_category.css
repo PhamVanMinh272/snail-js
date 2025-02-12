@@ -9,6 +9,10 @@ li.list-group-item:last-child {
     border-radius: 0;
 }
 
+li.list-group-item:first-child {
+    border-radius: 0;
+}
+
 li.list-group-item:hover {
     color: rgb(1, 49, 92);
     font-weight: 600;
@@ -20,4 +24,9 @@ li.list-group-item {
     font-weight: 300;
     font-family: "Quicksand",sans-serif;
     color: rgb(69, 69, 69);
+}
+
+li.list-group-item.active {
+    background-color: rgb(130, 196, 253);
+    color: black;
 }

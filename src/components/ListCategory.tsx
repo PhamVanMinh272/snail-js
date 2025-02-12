@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 // import '../css/list_category.css'
 import { BASE_URL } from "../url_sets";
+import Category from "../class_objects/category";
 
-interface Category {
-  id: number,
-  name: string,
-  parent: number
+
+interface Props {
+  handleSelectItem: (item: Category) => void;
 }
 
-function ListCategory() {
+function ListCategory({handleSelectItem}: Props) {
   const [categories, setCategories] = useState<Category[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   // call api
   useEffect(() => {
@@ -30,7 +31,14 @@ function ListCategory() {
         {
           // categories.map((item) => ())
           categories.map((item) => (
-            <li className="list-group-item">
+            <li className={
+              selectedIndex == item.id?
+              "list-group-item active" :
+              "list-group-item"
+            } onClick={() => {
+              setSelectedIndex(item.id);
+              handleSelectItem(item);
+            }}>
               {item.name}
             </li>
           ))
