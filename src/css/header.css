@@ -7,6 +7,12 @@ a.nav-link {
     color: rgb(33, 33, 33);
 }
 
+a.nav-link:hover {
+    color: rgb(1, 21, 39);
+    /* font-weight: 600; */
+    background-color: rgb(211, 228, 251);
+}
+
 a.navbar-brand {
     color: rgb(1, 49, 92);
     font-weight: 1000;

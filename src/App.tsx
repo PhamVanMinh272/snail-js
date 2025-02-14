@@ -13,10 +13,12 @@ function App() {
   // let items = ["New york", "Losangles", "Califolia", "London", "Yokyo"];
   const [selectedCategory, setSelectedCategory] = useState<Category>();
   const [products, setProducts] = useState<Product[]>([]);
+  const [visibleComponent, setvisableComponent] = useState(false);
   const handleSelectItem = (item: Category) => {
     setSelectedCategory(item);
+    setvisableComponent(false);
   };
-  const [alertVisable, setAlertVisibility] = useState(false);
+  
 
   // call api
   useEffect(() => {
@@ -34,6 +36,7 @@ function App() {
       const fetched_products = response_data.data as Product[];
       // console.log(fetched_products);
       setProducts(fetched_products);
+      setvisableComponent(true);
     };
 
     fetchProducts();
@@ -52,6 +55,7 @@ function App() {
         </div>
         <div className="col-10 my-content">
           <ListProduct
+            visible={visibleComponent}
             products={products}
             heading={selectedCategory? `Trang Chủ / ${selectedCategory.name}` : "Trang Chủ"}
             onSelectItem={() => {}}

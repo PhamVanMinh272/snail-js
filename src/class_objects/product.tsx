@@ -1,11 +1,13 @@
+interface Image {
+  id: number,
+  name: string,
+}
+
 interface Product {
     id: number,
     name: string,
     price: number,
-    image?: {
-      id: number,
-      name: string,
-    }
+    image?: Array<Image>
   }
 
 export default Product;

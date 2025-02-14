@@ -1,6 +1,7 @@
 // import '../css/header.css'
 import snailLogo from '../assets/snail-logo.png'
 
+
 function Header() {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
@@ -13,7 +14,7 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">Sản Phẩm</a>
+              <a className="nav-link" aria-current="page" href="/">Sản Phẩm</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#">Khuyến Mãi</a>
