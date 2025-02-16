@@ -2,6 +2,7 @@ import { MouseEvent, useEffect, useState } from "react";
 import Product from "../class_objects/product";
 import profilePic from "../assets/vinastar.webp";
 import { BASE_IMG } from "../url_sets";
+import ProductFilter from "./ProductFilter";
 
 interface Props {
   visible: boolean;
@@ -17,25 +18,8 @@ function ListProduct({ visible, products, heading, onSelectItem }: Props) {
     <>
       <p>{heading}</p>
       {(products.length === 0 && visible) && <p>Chưa có sản phẩm!</p>}
+      <ProductFilter></ProductFilter>
       {visible === false && <p>Loading ...</p>}
-      {/* <ul className="list-group">
-        {products.map((item) => (
-          <li
-            className={
-              selectedIndex === item.id
-                ? "list-group-item active"
-                : "list-group-item"
-            }
-            key={item.id}
-            onClick={() => {
-              setSelectedIndex(item.id);
-              onSelectItem(item.name);
-            }}
-          >
-            {item.name}
-          </li>
-        ))}
-      </ul> */}
 
       <div
         className={
