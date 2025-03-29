@@ -24,16 +24,23 @@ function ListProduct({ visible, products, heading, onSelectItem }: Props) {
             <ProductFilter></ProductFilter>
           </div>
         </div>
-        <div className="row">
-          <div className="col-12 d-md-none">
+        <div className="row justify-content-start">
+          <div className="col-2 d-md-none">
             <ProductFilterDropdown></ProductFilterDropdown>
+          </div>
+          <div className="col-2 d-md-none">
+            <i
+              className="bi bi-filter-left"
+              id="dropdownCategoriesBtn"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            ></i>
           </div>
         </div>
         {products.length === 0 && visible && <p>Chưa có sản phẩm!</p>}
         {visible === false && <p>Loading ...</p>}
 
         <div className={visible ? "row" : "row invisible"}>
-          {/* <div className="card-group"> */}
           {products.map((item) => (
             <div className="col-6 col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 mb-4">
               <div

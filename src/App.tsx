@@ -6,7 +6,7 @@ import Product from "./class_objects/product";
 import ListCategory from "./components/ListCategory";
 import Header from "./components/Header";
 import { BASE_URL } from "./common/url_sets";
-import "./App.css";
+import "./css/App.css";
 import Category from "./class_objects/category";
 import MainContent from "./components/MainContent";
 import CategoryDropdown from "./components/CategoryDropdown";
@@ -14,35 +14,38 @@ import ProductFilter from "./components/ProductFilter";
 import ProductFilterDropdown from "./components/ProductFilterDropdown";
 
 function App() {
-  // let items = ["New york", "Losangles", "Califolia", "London", "Yokyo"];
+  // const [isLoadingProduct, setIsLoadingProduct] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<Category>();
   const handleSelectItem = (item: Category) => {
     setSelectedCategory(item);
-    // setvisableComponent(false);
+    // setIsLoadingProduct(true);
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <Header></Header>
-      </div>
-      <div className="row">
-        <div className="col-6 justify-content-start">
-          <CategoryDropdown handleSelectItem={handleSelectItem}></CategoryDropdown>
+    <div className="d-flex flex-column min-vh-100">
+      <Header></Header>
+      <main className="flex-fill">
+        <div className="container">
+          <div className="row">
+            <div className="col-2 d-none d-md-block">
+              <ListCategory handleSelectItem={handleSelectItem}></ListCategory>
+              <br></br>
+            </div>
+            <div className="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 my-content">
+              <MainContent category={selectedCategory}></MainContent>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="row">
-        <div className="col-2 d-none d-md-block">
-        {/* d-none d-md-block */}
-          <ListCategory handleSelectItem={handleSelectItem}></ListCategory>
-          <br></br>
+      </main>
+      <footer className="footer mt-auto p-0 bg-light sticky-bottom d-sm-block d-md-none d-lg-none d-xl-none">
+        <div className="container justify-content-center">
+          <span className="text-muted">
+            <CategoryDropdown
+              handleSelectItem={handleSelectItem}
+            ></CategoryDropdown>
+          </span>
         </div>
-        <div className="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 my-content">
-          <MainContent
-            category={selectedCategory}
-          ></MainContent>
-        </div>
-      </div>
+      </footer>
     </div>
   );
 }
