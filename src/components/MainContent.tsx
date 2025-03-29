@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Product from "../class_objects/product";
 import ListProduct from "./ListProduct";
-import { BASE_URL } from "../url_sets";
+import { BASE_URL } from "../common/url_sets";
 import Category from "../class_objects/category";
 
 interface Props {

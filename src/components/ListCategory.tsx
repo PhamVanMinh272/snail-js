@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 // import '../css/list_category.css'
-import { BASE_URL } from "../url_sets";
+import { BASE_URL } from "../common/url_sets";
 import Category from "../class_objects/category";
 
 

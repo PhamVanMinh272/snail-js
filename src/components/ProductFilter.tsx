@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Brand } from "../class_objects/brand";
-import { BASE_URL } from "../url_sets";
+import { BASE_URL } from "../common/url_sets";
 
 function ProductFilter() {
 	const [brands, setBrands] = useState<Brand[]>([]);
@@ -21,7 +21,7 @@ function ProductFilter() {
       <form>
         <div className="row">
           <div className="col">
-					<select className="form-select" aria-label="Brand">
+					<select className="form-select product-filter-select" aria-label="Brand">
 						<option selected>Thương Hiệu</option>
 						{
 							brands.map((item) => (
@@ -33,7 +33,7 @@ function ProductFilter() {
 					</select>
           </div>
           <div className="col">
-						<select className="form-select" aria-label="Price">
+						<select className="form-select product-filter-select" aria-label="Price">
 							<option selected>Giá</option>
 							<option>Dưới 500.000</option>
 							<option>Từ 500.000 đến 1.000.000</option>
@@ -42,7 +42,7 @@ function ProductFilter() {
 						</select>
           </div>
           <div className="col">
-					<select className="form-select" aria-label="Color">
+					<select className="form-select product-filter-select" aria-label="Color">
 							<option selected>Màu Sắc</option>
 							<option>XanhXanh</option>
 							<option>Đỏ</option>
@@ -56,7 +56,7 @@ function ProductFilter() {
 						</select>
           </div>
           <div className="col">
-					<select className="form-select" aria-label="Size">
+					<select className="form-select product-filter-select" aria-label="Size">
 							<option selected>Size</option>
 							<option>35</option>
 							<option>36</option>
