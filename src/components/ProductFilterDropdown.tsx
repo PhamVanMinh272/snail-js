@@ -23,6 +23,7 @@ function CategoryDropdown() {
   return (
     <>
       <div className="dropdown mb-3">
+        <span>Bộ lọc: </span>
         <i
           className="bi bi-funnel dropdown-toggle"
           id="dropdownCategoriesBtn"

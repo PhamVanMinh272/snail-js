@@ -81,7 +81,8 @@ function ProductFilter() {
           </div>
 		  <div className="col-2 p-1"></div>
 		  <div className="col-2 p-1">
-			<i className="bi bi-filter-left" id="dropdownCategoriesBtn" data-bs-toggle="dropdown" aria-expanded="false"></i>
+        <span>Sắp xếp: </span>
+			  <i className="bi bi-filter-left" id="dropdownCategoriesBtn" data-bs-toggle="dropdown" aria-expanded="false"></i>
 		  </div>
         </div>
       </form>

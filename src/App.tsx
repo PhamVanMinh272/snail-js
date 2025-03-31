@@ -1,24 +1,17 @@
 import { useState, useEffect } from "react";
-// import Alert from "./components/alert";
-// import Button from "./components/Button";
-import ListProduct from "./components/ListProduct";
-import Product from "./class_objects/product";
 import ListCategory from "./components/ListCategory";
 import Header from "./components/Header";
-import { BASE_URL } from "./common/url_sets";
 import "./css/App.css";
 import Category from "./class_objects/category";
 import MainContent from "./components/MainContent";
 import CategoryDropdown from "./components/CategoryDropdown";
-import ProductFilter from "./components/ProductFilter";
-import ProductFilterDropdown from "./components/ProductFilterDropdown";
 
 function App() {
-  // const [isLoadingProduct, setIsLoadingProduct] = useState(true);
+  const [isLoadingProduct, setIsLoadingProduct] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<Category>();
-  const handleSelectItem = (item: Category) => {
+  const handleSelectCategory = (item: Category) => {
     setSelectedCategory(item);
-    // setIsLoadingProduct(true);
+    setIsLoadingProduct(true);
   };
 
   return (
@@ -28,11 +21,11 @@ function App() {
         <div className="container">
           <div className="row">
             <div className="col-2 d-none d-md-block">
-              <ListCategory handleSelectItem={handleSelectItem}></ListCategory>
+              <ListCategory handleSelectItem={handleSelectCategory}></ListCategory>
               <br></br>
             </div>
             <div className="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 my-content">
-              <MainContent category={selectedCategory}></MainContent>
+              <MainContent category={selectedCategory} isLoadingProduct={isLoadingProduct} setIsLoadingProduct={setIsLoadingProduct}></MainContent>
             </div>
           </div>
         </div>
@@ -41,7 +34,7 @@ function App() {
         <div className="container justify-content-center">
           <span className="text-muted">
             <CategoryDropdown
-              handleSelectItem={handleSelectItem}
+              handleSelectItem={handleSelectCategory}
             ></CategoryDropdown>
           </span>
         </div>
