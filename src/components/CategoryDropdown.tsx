@@ -24,7 +24,7 @@ function CategoryDropdown({ handleSelectItem }: Props) {
 
   return (
     <>
-      <div className="dropdown">
+      {/* <div className="dropdown">
         <div
           className="d-flex flex-column"
           id="dropdownCategoriesBtn"
@@ -39,7 +39,10 @@ function CategoryDropdown({ handleSelectItem }: Props) {
           </div>
         </div>
 
-        <ul className="dropdown-menu" aria-labelledby="dropdownCategoriesBtn">
+        <ul
+          className="dropdown-menu category-dropdown"
+          aria-labelledby="dropdownCategoriesBtn"
+        >
           {categories.map((item) => (
             <li
               className="dropdown-item category-dropdown-item"
@@ -51,7 +54,28 @@ function CategoryDropdown({ handleSelectItem }: Props) {
             </li>
           ))}
         </ul>
+      </div> */}
+      <div className="d-flex flex-column">
+        {/* <div className="m-auto">
+          <i className="bi bi-list-ul"></i>
+        </div> */}
+        <div className="m-auto">
+          <button className="category-collapse-btn m-0" data-bs-toggle="collapse"
+            data-bs-target="#collapseCategory"><i className="bi bi-list-ul"></i> Danh Mục</button>
+        </div>
       </div>
+      <ul className="list-group collapse mb-3" id="collapseCategory">
+        {categories.map((item) => (
+          <li
+            className="list-group-item"
+            onClick={() => {
+              handleSelectItem(item);
+            }}
+          >
+            {item.name}
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

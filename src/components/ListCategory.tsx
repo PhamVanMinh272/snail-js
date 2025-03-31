@@ -29,7 +29,6 @@ function ListCategory({handleSelectItem}: Props) {
     <>
       <ul className="list-group">
         {
-          // categories.map((item) => ())
           categories.map((item) => (
             <li className={
               selectedIndex == item.id?

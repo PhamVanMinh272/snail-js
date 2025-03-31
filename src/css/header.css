@@ -1,10 +1,12 @@
 nav {
     margin-bottom: 15px;
+    background-color: rgb(12, 75, 75);
 }
 
 a.nav-link {
-    font-size: 13px;
-    color: rgb(33, 33, 33);
+    font-size: 14px;
+    color: rgb(247, 245, 245);
+    font-weight: 500;
 }
 
 a.nav-link:hover {
@@ -14,6 +16,6 @@ a.nav-link:hover {
 }
 
 a.navbar-brand {
-    color: rgb(1, 49, 92);
+    color: rgb(236, 244, 252);
     font-weight: 1000;
 }

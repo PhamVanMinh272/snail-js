@@ -1,0 +1,10 @@
+.footer {
+    background-color: rgb(12, 75, 75);
+    overflow-y: auto;
+}
+.category-collapse-btn {
+    background-color: rgb(12, 75, 75);
+    border: 0;
+    height: 40px;
+    color: #faf7f7;
+}
