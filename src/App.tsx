@@ -5,6 +5,7 @@ import "./css/App.css";
 import Category from "./class_objects/category";
 import MainContent from "./components/MainContent";
 import CategoryDropdown from "./components/CategoryDropdown";
+import NavFooter from "./components/NavFooter";
 import Footer from "./components/Footer";
 
 function App() {
@@ -37,7 +38,8 @@ function App() {
           </div>
         </div>
       </main>
-      <Footer handleSelectItem={handleSelectCategory}></Footer>
+      <Footer></Footer>
+      <NavFooter handleSelectItem={handleSelectCategory}></NavFooter>
     </div>
   );
 }

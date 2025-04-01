@@ -1,3 +1,13 @@
 .product-filter-select {
     font-size: 13px;
 }
+
+.my-dropdown-ul {
+    border-radius: 0;
+    border: 0;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; 
+}
+
+.my-dropdown-ul a {
+    font-size: 13px;
+}

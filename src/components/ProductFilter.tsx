@@ -79,11 +79,30 @@ function ProductFilter() {
               <option>45</option>
             </select>
           </div>
-		  <div className="col-2 p-1"></div>
-		  <div className="col-2 p-1">
-        <span>Sắp xếp: </span>
-			  <i className="bi bi-filter-left" id="dropdownCategoriesBtn" data-bs-toggle="dropdown" aria-expanded="false"></i>
-		  </div>
+          <div className="col-2 p-1"></div>
+          <div className="col-2 p-1">
+            <div className="dropdown">
+              <span>Sắp xếp: </span>
+              <i
+                className="bi bi-filter-left"
+                id="dropdownSortBtn"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              ></i>
+              <ul className="dropdown-menu my-dropdown-ul" aria-labelledby="dropdownSortBtn">
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Giá tăng dần
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Giá giảm dần
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </form>
       <div></div>

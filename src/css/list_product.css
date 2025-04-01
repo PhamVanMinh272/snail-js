@@ -1,12 +1,17 @@
 div.my-content {
-    border-right: 0.5px solid rgb(243, 243, 242);
+    /* border-right: 0.5px solid rgb(243, 243, 242); */
     /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
 }
 
 
 .card {
-    border: 0.3px solid rgb(236, 234, 234);
+    border: 0.1px solid rgb(246, 244, 244);
+    border-radius: 0;
+}
+
+.card:hover {
+    border: 0.1px solid rgb(72, 164, 164);
 }
 
 .card-body {
@@ -22,10 +27,12 @@ div.my-content {
 }
 
 .card-footer small {
-    color: rgb(236, 23, 23);
-    font-size: 13px;
-    font-weight: 1000;
-    font-family: monospace;
+    /* color: rgb(236, 23, 23); */
+    color:black;
+    font-size: 14px;
+    font-weight: 750;
+    /* font-family: monospace; */
+    font-family: "Quicksand",sans-serif
 }
 
 p {
@@ -38,4 +45,16 @@ p {
     padding: 2px;
 }
 
+/* pagination */
+/* 
+.page-link {
+    color: rgb(32, 32, 32);
+    font-size: 14px;
+    font-weight: 500;
+    border: 0;
+}
 
+.my-pagination-ul {
+    border: 0;
+}
+ */

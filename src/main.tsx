@@ -8,6 +8,7 @@ import './css/list_product.css'
 import './css/header.css'
 import './css/list_category.css'
 import './css/product_filter.css'
+import './css/nav_footer.css'
 import './css/footer.css'
 import './css/category_dropdown.css'
 

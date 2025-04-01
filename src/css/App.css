@@ -54,3 +54,9 @@ span {
   font-family: "Quicksand",sans-serif;
   font-size: 13px;
 }
+
+i:hover {
+  cursor: pointer;
+  /* transform: scale(1.2);
+  transition: transform 0.3s ease; */
+}
