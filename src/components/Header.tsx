@@ -6,8 +6,7 @@ function Header() {
     <nav className="navbar my-nav-header navbar-expand-lg">
       <div className="container">
         <a className="navbar-brand" href="#">
-          Snail &nbsp;
-          <img src={snailLogo} alt="snail-logo" width="40" height="35"></img>
+          <img src={snailLogo} alt="snail-logo" width="55" height="50"></img>
         </a>
         <button
           className="navbar-toggler text-white ms-auto me-3 border-0"
