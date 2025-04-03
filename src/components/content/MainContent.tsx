@@ -5,7 +5,7 @@ import { BASE_URL } from "../../common/url_sets";
 import Category from "../../types/category";
 import ProductFilter from "./ProductFilter";
 import ProductFilterDropdown from "./ProductFilterDropdown";
-import { Brand } from "../../types/brand";
+import { useBrands } from "../../hooks/useBrands";
 
 interface Props {
   category?: Category;
@@ -42,18 +42,7 @@ function MainContent({
     fetchProducts();
   }, [category]);
 
-  const [brands, setBrands] = useState<Brand[]>([]);
-  
-  useEffect(() => {
-    const fetchBrands = async () => {
-      let response;
-      response = await fetch(`${BASE_URL}/products/brands`);
-      const responseData = await response.json();
-      const fetchedData = responseData.data as Brand[];
-      setBrands(fetchedData);
-    };
-    fetchBrands();
-  }, []);
+  const { brands, setBrands } = useBrands();
   
   return (
     <>
