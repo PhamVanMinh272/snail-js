@@ -1,4 +1,4 @@
-import Category from "../class_objects/category";
+import Category from "../../types/category";
 import CategoryDropdown from "./CategoryDropdown";
 
 interface Props {

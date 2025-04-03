@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import Product from "../class_objects/product";
+import Product from "../../types/product";
 import ListProduct from "./ListProduct";
-import { BASE_URL } from "../common/url_sets";
-import Category from "../class_objects/category";
+import { BASE_URL } from "../../common/url_sets";
+import Category from "../../types/category";
 import ProductFilter from "./ProductFilter";
 import ProductFilterDropdown from "./ProductFilterDropdown";
-import { Brand } from "../class_objects/brand";
+import { Brand } from "../../types/brand";
 
 interface Props {
   category?: Category;

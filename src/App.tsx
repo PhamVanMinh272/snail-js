@@ -1,19 +1,11 @@
-import { useState, useEffect } from "react";
-import ListCategory from "./components/ListCategory";
-import Header from "./components/Header";
-import "./css/App.css";
-import Category from "./class_objects/category";
-import MainContent from "./components/MainContent";
-import CategoryDropdown from "./components/CategoryDropdown";
-import NavFooter from "./components/NavFooter";
-import Footer from "./components/Footer";
-import { BASE_URL } from "./common/url_sets";
-import { fetchCategories } from "./services/category";
+import { useState } from "react";
+import ListCategory from "./components/content/ListCategory";
+import Header from "./components/common/Header";
+import Category from "./types/category";
+import MainContent from "./components/content/MainContent";
+import NavFooter from "./components/content/NavFooter";
+import Footer from "./components/common/Footer";
 import { useCategories } from "./hooks/useCategories";
-
-interface Props {
-  handleSelectItem: (item: Category) => void;
-}
 
 function App() {
   const { categories, isLoadingProduct, setIsLoadingProduct } = useCategories();

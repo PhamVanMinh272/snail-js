@@ -1,5 +1,6 @@
 // import '../css/header.css'
-import snailLogo from "../assets/snail-logo.png";
+// import snailLogo from ".../assets/snail-logo.png";
+import snailLogo from "../../assets/snail-logo.png";
 
 function Header() {
   return (

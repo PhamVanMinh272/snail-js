@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import Category from "../class_objects/category";
+import Category from "../../types/category";
 
 interface Props {
   handleSelectItem: (item: Category) => void;

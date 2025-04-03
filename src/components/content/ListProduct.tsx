@@ -1,6 +1,6 @@
 import { MouseEvent, useEffect, useState } from "react";
-import Product from "../class_objects/product";
-import { BASE_IMG } from "../common/url_sets";
+import Product from "../../types/product";
+import { BASE_IMG } from "../../common/url_sets";
 
 interface Props {
   products: Product[];
@@ -62,35 +62,6 @@ function ListProduct({ isLoading, products, onSelectItem }: Props) {
           </div>
         ))}
       </div>
-      {/* <nav aria-label="Page navigation">
-        <ul className="pagination my-pagination-ul justify-content-center">
-          <li className="page-item disabled">
-            <a className="page-link" href="#" aria-disabled="true">
-              Previous
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              1
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              2
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              3
-            </a>
-          </li>
-          <li className="page-item">
-            <a className="page-link" href="#">
-              Next
-            </a>
-          </li>
-        </ul>
-      </nav> */}
     </>
   );
 }

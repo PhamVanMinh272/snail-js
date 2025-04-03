@@ -4,6 +4,7 @@ import App from './App'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import "bootstrap-icons/font/bootstrap-icons.css"
+import "./css/App.css";
 import './css/list_product.css'
 import './css/header.css'
 import './css/list_category.css'

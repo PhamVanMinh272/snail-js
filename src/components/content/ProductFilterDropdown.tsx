@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { BASE_URL } from "../common/url_sets";
-import Category from "../class_objects/category";
-import { Brand } from "../class_objects/brand";
+import { BASE_URL } from "../../common/url_sets";
+import Category from "../../types/category";
+import { Brand } from "../../types/brand";
 
 interface Props {
   brands: Brand[];
