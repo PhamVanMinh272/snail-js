@@ -28,7 +28,7 @@ function ListProduct({ isLoading, products, onSelectItem }: Props) {
 
       <div className={isLoading === false ? "row" : "row invisible"}>
         {products.map((item) => (
-          <div className="col-6 col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
+          <div key={item.id} className="col-6 col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
             <div
               className={
                 selectedIndex === item.id

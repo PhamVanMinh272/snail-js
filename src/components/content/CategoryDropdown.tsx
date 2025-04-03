@@ -18,6 +18,7 @@ function CategoryDropdown({ handleSelectItem, categories }: Props) {
       <ul className="list-group collapse mb-3" id="collapseCategory">
         {categories.map((item) => (
           <li
+            key={item.id}
             className="list-group-item"
             onClick={() => {
               handleSelectItem(item);

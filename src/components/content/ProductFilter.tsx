@@ -17,9 +17,9 @@ function ProductFilter({ brands }: Props) {
               aria-label="Brand"
               defaultValue=""
             >
-              <option>Thương Hiệu</option>
+              <option key='brand'>Thương Hiệu</option>
               {brands.map((item) => (
-                <option value={item.id}>{item.name}</option>
+                <option key={item.name} value={item.id}>{item.name}</option>
               ))}
             </select>
           </div>
@@ -29,11 +29,11 @@ function ProductFilter({ brands }: Props) {
               aria-label="Price"
               defaultValue=""
             >
-              <option>Giá</option>
-              <option>Dưới 500.000</option>
+              <option key='price'>Giá</option>
+              {/* <option>Dưới 500.000</option>
               <option>Từ 500.000 đến 1.000.000</option>
               <option>Từ 1.000.000 đến 1.500.000</option>
-              <option>Trên 1.500.000</option>
+              <option>Trên 1.500.000</option> */}
             </select>
           </div>
           <div className="col-2 p-1">
@@ -42,8 +42,8 @@ function ProductFilter({ brands }: Props) {
               aria-label="Color"
               defaultValue=""
             >
-              <option>Màu Sắc</option>
-              <option>XanhXanh</option>
+              <option key='color'>Màu Sắc</option>
+              {/* <option>XanhXanh</option>
               <option>Đỏ</option>
               <option>Tím</option>
               <option>Vàng</option>
@@ -51,7 +51,7 @@ function ProductFilter({ brands }: Props) {
               <option>Nâu</option>
               <option>Đen</option>
               <option>Trắng</option>
-              <option>Khác</option>
+              <option>Khác</option> */}
             </select>
           </div>
           <div className="col-2 p-1">
@@ -61,17 +61,17 @@ function ProductFilter({ brands }: Props) {
               defaultValue="Size"
             >
               <option>Size</option>
-              <option>35</option>
-              <option>36</option>
-              <option>37</option>
-              <option>38</option>
-              <option>39</option>
-              <option>40</option>
-              <option>41</option>
-              <option>42</option>
-              <option>43</option>
-              <option>44</option>
-              <option>45</option>
+              <option key='35'>35</option>
+              <option key='36'>36</option>
+              <option key='37'>37</option>
+              <option key='38'>38</option>
+              <option key='39'>39</option>
+              <option key='40'>40</option>
+              <option key='41'>41</option>
+              <option key='42'>42</option>
+              <option key='43'>43</option>
+              <option key='44'>44</option>
+              <option key='45'>45</option>
             </select>
           </div>
           <div className="col-2 p-1"></div>
@@ -84,13 +84,16 @@ function ProductFilter({ brands }: Props) {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               ></i>
-              <ul className="dropdown-menu my-dropdown-ul" aria-labelledby="dropdownSortBtn">
-                <li>
+              <ul
+                className="dropdown-menu my-dropdown-ul"
+                aria-labelledby="dropdownSortBtn"
+              >
+                <li key="increase-price">
                   <a className="dropdown-item" href="#">
                     Giá tăng dần
                   </a>
                 </li>
-                <li>
+                <li key="decrease-price">
                   <a className="dropdown-item" href="#">
                     Giá giảm dần
                   </a>
