@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
-import Product from "../../types/product";
 import ListProduct from "./ListProduct";
-import { BASE_URL } from "../../common/url_sets";
 import Category from "../../types/category";
 import ProductFilter from "./ProductFilter";
 import ProductFilterDropdown from "./ProductFilterDropdown";
 import { useBrands } from "../../hooks/useBrands";
+import { useProducts } from "../../hooks/useProducts";
 
 interface Props {
   category?: Category;
@@ -18,32 +16,14 @@ function MainContent({
   isLoadingProduct,
   setIsLoadingProduct,
 }: Props) {
-  const [products, setProducts] = useState<Product[]>([]);
-
   // call api
-  useEffect(() => {
-    console.log(category);
-    const fetchProducts = async () => {
-      let response;
-      if (category) {
-        response = await fetch(
-          `${BASE_URL}/products?categoryId=${category.id}`
-        );
-      } else {
-        response = await fetch(`${BASE_URL}/products`);
-      }
-
-      const response_data = await response.json();
-      const fetched_products = response_data.data as Product[];
-      setProducts(fetched_products);
-      setIsLoadingProduct(false);
-    };
-
-    fetchProducts();
-  }, [category]);
+  const { products } = useProducts({
+    categoryId: category?.id,
+    setIsLoadingProduct,
+  });
 
   const { brands, setBrands } = useBrands();
-  
+
   return (
     <>
       <p>{category ? category.name : "Tất cả"}</p>

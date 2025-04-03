@@ -1,9 +1,9 @@
-interface Image {
+export interface Image {
   id: number,
   name: string,
 }
 
-interface Product {
+export interface Product {
     id: number,
     name: string,
     price: number,
