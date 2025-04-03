@@ -5,6 +5,7 @@ import { BASE_URL } from "../common/url_sets";
 import Category from "../class_objects/category";
 import ProductFilter from "./ProductFilter";
 import ProductFilterDropdown from "./ProductFilterDropdown";
+import { Brand } from "../class_objects/brand";
 
 interface Props {
   category?: Category;
@@ -40,18 +41,32 @@ function MainContent({
 
     fetchProducts();
   }, [category]);
+
+  const [brands, setBrands] = useState<Brand[]>([]);
+  
+  useEffect(() => {
+    const fetchBrands = async () => {
+      let response;
+      response = await fetch(`${BASE_URL}/products/brands`);
+      const responseData = await response.json();
+      const fetchedData = responseData.data as Brand[];
+      setBrands(fetchedData);
+    };
+    fetchBrands();
+  }, []);
+  
   return (
     <>
       <p>{category ? category.name : "Tất cả"}</p>
       <div className="container mt-4">
         <div className="row">
           <div className="col-12 d-none d-md-block">
-            <ProductFilter></ProductFilter>
+            <ProductFilter brands={brands}></ProductFilter>
           </div>
         </div>
         <div className="row justify-content-start">
           <div className="col-6 d-md-none">
-            <ProductFilterDropdown></ProductFilterDropdown>
+            <ProductFilterDropdown brands={brands}></ProductFilterDropdown>
           </div>
           <div className="col-6 d-md-none">
             <span>Sắp xếp: </span>

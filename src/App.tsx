@@ -7,9 +7,16 @@ import MainContent from "./components/MainContent";
 import CategoryDropdown from "./components/CategoryDropdown";
 import NavFooter from "./components/NavFooter";
 import Footer from "./components/Footer";
+import { BASE_URL } from "./common/url_sets";
+import { fetchCategories } from "./services/category";
+import { useCategories } from "./hooks/useCategories";
+
+interface Props {
+  handleSelectItem: (item: Category) => void;
+}
 
 function App() {
-  const [isLoadingProduct, setIsLoadingProduct] = useState(true);
+  const { categories, isLoadingProduct, setIsLoadingProduct } = useCategories();
   const [selectedCategory, setSelectedCategory] = useState<Category>();
   const handleSelectCategory = (item: Category) => {
     setSelectedCategory(item);
@@ -25,6 +32,7 @@ function App() {
             <div className="col-2 d-none d-md-block">
               <ListCategory
                 handleSelectItem={handleSelectCategory}
+                categories={categories}
               ></ListCategory>
               <br></br>
             </div>
@@ -39,7 +47,10 @@ function App() {
         </div>
       </main>
       <Footer></Footer>
-      <NavFooter handleSelectItem={handleSelectCategory}></NavFooter>
+      <NavFooter
+        handleSelectItem={handleSelectCategory}
+        categories={categories}
+      ></NavFooter>
     </div>
   );
 }

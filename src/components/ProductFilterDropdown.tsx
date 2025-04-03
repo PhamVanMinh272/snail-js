@@ -4,22 +4,10 @@ import Category from "../class_objects/category";
 import { Brand } from "../class_objects/brand";
 
 interface Props {
-  handleSelectItem: (item: Category) => void;
+  brands: Brand[];
 }
 
-function CategoryDropdown() {
-  const [brands, setBrands] = useState<Brand[]>([]);
-
-  useEffect(() => {
-    const fetchBrands = async () => {
-      let response;
-      response = await fetch(`${BASE_URL}/products/brands`);
-      const responseData = await response.json();
-      const fetchedData = responseData.data as Brand[];
-      setBrands(fetchedData);
-    };
-    fetchBrands();
-  }, []);
+function CategoryDropdown({ brands }: Props) {
   return (
     <>
       <div className="dropdown mb-3">
@@ -39,7 +27,7 @@ function CategoryDropdown() {
                     className="form-select product-filter-select"
                     aria-label="Brand"
                   >
-                    <option selected>Thương Hiệu</option>
+                    <option>Thương Hiệu</option>
                     {brands.map((item) => (
                       <option value={item.id}>{item.name}</option>
                     ))}
@@ -50,7 +38,7 @@ function CategoryDropdown() {
                     className="form-select product-filter-select"
                     aria-label="Price"
                   >
-                    <option selected>Giá</option>
+                    <option>Giá</option>
                     <option>Dưới 500.000</option>
                     <option>Từ 500.000 đến 1.000.000</option>
                     <option>Từ 1.000.000 đến 1.500.000</option>
@@ -62,7 +50,7 @@ function CategoryDropdown() {
                     className="form-select product-filter-select"
                     aria-label="Color"
                   >
-                    <option selected>Màu Sắc</option>
+                    <option>Màu Sắc</option>
                     <option>XanhXanh</option>
                     <option>Đỏ</option>
                     <option>Tím</option>
@@ -79,7 +67,7 @@ function CategoryDropdown() {
                     className="form-select product-filter-select"
                     aria-label="Size"
                   >
-                    <option selected>Size</option>
+                    <option>Size</option>
                     <option>35</option>
                     <option>36</option>
                     <option>37</option>
