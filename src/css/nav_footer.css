@@ -1,10 +1,12 @@
 .footer {
-    background-color: rgb(12, 75, 75);
-    overflow-y: auto;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid rgb(168, 168, 168);
 }
 .category-collapse-btn {
-    background-color: rgb(12, 75, 75);
+    background-color: rgb(255, 255, 255);
     border: 0;
     height: 40px;
-    color: #faf7f7;
+    color: #333333;
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
 }

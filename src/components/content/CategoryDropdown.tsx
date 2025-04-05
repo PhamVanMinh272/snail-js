@@ -9,7 +9,7 @@ function CategoryDropdown({ handleSelectItem, categories }: Props) {
 
   return (
     <>
-      <div className="d-flex flex-column">
+      <div className="d-flex flex-column my-category-list">
         <div className="m-auto">
           <button className="category-collapse-btn m-0" data-bs-toggle="collapse"
             data-bs-target="#collapseCategory"><i className="bi bi-list-ul"></i> Danh Mục</button>

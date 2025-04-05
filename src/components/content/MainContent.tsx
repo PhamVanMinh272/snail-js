@@ -26,8 +26,22 @@ function MainContent({
 
   return (
     <>
-      <p>{category ? category.name : "Tất cả"}</p>
-      <div className="container mt-4">
+      <div className="container my-road-navigator-container">
+        <div className="row">
+          <div className="col col-12 col-sm-12 col-md-2">
+            <span>{products.length} Sản Phẩm</span>
+          </div>
+          <div className="col col-12 col-sm-12 col-md-10">
+            <a href="/">
+              <span>{"Tất cả > "}</span>
+            </a>
+            <a>
+              <span>{category ? category.name : ""}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div className="container-fluid mt-4 p-0">
         <div className="row">
           <div className="col-12 d-none d-md-block">
             <ProductFilter brands={brands}></ProductFilter>
@@ -47,7 +61,7 @@ function MainContent({
             ></i>
           </div>
         </div>
-        <div>
+        <div className="my-product-list-container">
           <ListProduct
             isLoading={isLoadingProduct}
             products={products}

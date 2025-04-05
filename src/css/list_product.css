@@ -27,12 +27,10 @@ div.my-content {
 }
 
 .card-footer small {
-    /* color: rgb(236, 23, 23); */
     color:black;
     font-size: 14px;
-    font-weight: 750;
-    /* font-family: monospace; */
-    font-family: "Quicksand",sans-serif
+    font-weight: 600;
+    font-family: "Quicksand",sans-serif;
 }
 
 p {
@@ -45,16 +43,26 @@ p {
     padding: 2px;
 }
 
-/* pagination */
-/* 
-.page-link {
-    color: rgb(32, 32, 32);
-    font-size: 14px;
-    font-weight: 500;
-    border: 0;
+/* my-road-navigator */
+
+.my-road-navigator-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* border: 1px solid rgb(214, 214, 214); */
+    background-color: rgb(247, 247, 247);
 }
 
-.my-pagination-ul {
-    border: 0;
+.my-road-navigator-container span {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgb(47, 47, 47);
+    font-family: "Quicksand",sans-serif;
 }
- */
+
+.my-road-navigator-container .col {
+    padding: 10px;
+}
+
+.my-road-navigator-container span:hover {
+    color: black;
+}

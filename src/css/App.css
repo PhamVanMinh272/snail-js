@@ -48,15 +48,21 @@ p {
 
 a {
   font-family: "Quicksand",sans-serif;
+  text-decoration-line: none;
 }
 
 span {
   font-family: "Quicksand",sans-serif;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 i:hover {
   cursor: pointer;
   /* transform: scale(1.2);
   transition: transform 0.3s ease; */
+}
+
+
+.my-product-list-container {
+  min-height: 100vh;
 }

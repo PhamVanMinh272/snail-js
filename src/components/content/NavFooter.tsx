@@ -8,7 +8,7 @@ interface Props {
 
 function NavFooter({ handleSelectItem, categories }: Props) {
   return (
-    <footer className="footer mt-auto p-0 sticky-bottom d-sm-block d-md-none d-lg-none d-xl-none">
+    <footer className="footer mt-auto p-0 sticky-bottom d-sm-block d-md-block d-lg-none d-xl-none">
       <CategoryDropdown handleSelectItem={handleSelectItem} categories={categories}></CategoryDropdown>
     </footer>
   );

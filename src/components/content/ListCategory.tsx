@@ -11,7 +11,7 @@ function ListCategory({ handleSelectItem, categories }: Props) {
 
   return (
     <>
-      <ul className="list-group">
+      {/* <ul className="list-group my-category-list">
         {categories.map((item) => (
           <li
             key={item.id}
@@ -28,7 +28,21 @@ function ListCategory({ handleSelectItem, categories }: Props) {
             {item.name}
           </li>
         ))}
-      </ul>
+      </ul> */}
+      <div className="row">
+        {/* <div className="col col-6 col-sm-3 col-md-3 col-lg-2"></div> */}
+        {categories.map((item) => (
+          <div
+            className="col col-auto my-category-item"
+            onClick={() => {
+              setSelectedIndex(item.id);
+              handleSelectItem(item);
+            }}
+          >
+            <span>{item.name}</span>
+          </div>
+        ))}
+      </div>
     </>
   );
 }

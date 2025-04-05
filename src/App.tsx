@@ -21,14 +21,14 @@ function App() {
       <main className="flex-fill">
         <div className="container">
           <div className="row">
-            <div className="col-2 d-none d-md-block">
+            <div className="col-12">
               <ListCategory
                 handleSelectItem={handleSelectCategory}
                 categories={categories}
               ></ListCategory>
               <br></br>
             </div>
-            <div className="col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10 my-content">
+            <div className="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 my-content">
               <MainContent
                 category={selectedCategory}
                 isLoadingProduct={isLoadingProduct}
