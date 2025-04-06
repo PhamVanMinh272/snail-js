@@ -3,3 +3,8 @@ export default interface Category {
   name: string,
   parent: number
 };
+
+export interface CategoryFilter {
+  id: number,
+  name: string
+};

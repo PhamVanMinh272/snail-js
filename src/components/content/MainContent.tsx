@@ -4,6 +4,7 @@ import ProductFilter from "./ProductFilter";
 import ProductFilterDropdown from "./ProductFilterDropdown";
 import { useBrands } from "../../hooks/useBrands";
 import { useProducts } from "../../hooks/useProducts";
+import { useCategoryFilters } from "../../hooks/useCategoryFilters";
 
 interface Props {
   category?: Category;
@@ -20,6 +21,10 @@ function MainContent({
   const { products } = useProducts({
     categoryId: category?.id,
     setIsLoadingProduct,
+  });
+
+  const { categoryFilters } = useCategoryFilters({
+    categoryId: category?.id,
   });
 
   const { brands, setBrands } = useBrands();
@@ -41,15 +46,22 @@ function MainContent({
           </div>
         </div>
       </div>
-      <div className="container-fluid mt-4 p-0">
+      <div className="container mt-4">
         <div className="row">
           <div className="col-12 d-none d-md-block">
-            <ProductFilter brands={brands}></ProductFilter>
+            <ProductFilter
+              brands={brands}
+              filters={categoryFilters}
+              isLoading={isLoadingProduct}
+            ></ProductFilter>
           </div>
         </div>
         <div className="row justify-content-start">
           <div className="col-6 d-md-none">
-            <ProductFilterDropdown brands={brands}></ProductFilterDropdown>
+            <ProductFilterDropdown
+              brands={brands}
+              filters={categoryFilters}
+            ></ProductFilterDropdown>
           </div>
           <div className="col-6 d-md-none">
             <span>Sắp xếp: </span>
@@ -61,7 +73,7 @@ function MainContent({
             ></i>
           </div>
         </div>
-        <div className="my-product-list-container">
+        <div className=" row my-product-list-container">
           <ListProduct
             isLoading={isLoadingProduct}
             products={products}

@@ -21,14 +21,13 @@ function ListProduct({ isLoading, products, onSelectItem }: Props) {
             style={{ width: "3rem", height: "3rem" }}
             role="status"
           >
-            {/* <span className="sr-only">Loading...</span> */}
           </div>
         </div>
       )}
 
-      <div className={isLoading === false ? "row g-1 mx-0" : "row invisible"}>
+      <div className={isLoading === false ? "row" : "row invisible"}>
         {products.map((item) => (
-          <div key={item.id} className="col-6 col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 p-0">
+          <div key={item.id} className="col-6 col-xs-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 g-3 mx-0">
             <div
               className={
                 selectedIndex === item.id

@@ -11,8 +11,10 @@ function App() {
   const { categories, isLoadingProduct, setIsLoadingProduct } = useCategories();
   const [selectedCategory, setSelectedCategory] = useState<Category>();
   const handleSelectCategory = (item: Category) => {
-    setSelectedCategory(item);
-    setIsLoadingProduct(true);
+    if (selectedCategory?.id !== item.id) { // Compare by a unique property, like `id`
+      setSelectedCategory(item);
+      setIsLoadingProduct(true);
+    }
   };
 
   return (
