@@ -2,9 +2,9 @@ import ListProduct from "./ListProduct";
 import Category from "../../types/category";
 import ProductFilter from "./ProductFilter";
 import ProductFilterDropdown from "./ProductFilterDropdown";
-import { useBrands } from "../../hooks/useBrands";
 import { useProducts } from "../../hooks/useProducts";
 import { useCategoryFilters } from "../../hooks/useCategoryFilters";
+import { useState } from "react";
 
 interface Props {
   category?: Category;
@@ -17,17 +17,19 @@ function MainContent({
   isLoadingProduct,
   setIsLoadingProduct,
 }: Props) {
+
+  const [sortPrice, setSortPrice] = useState("");
+
   // call api
   const { products } = useProducts({
     categoryId: category?.id,
     setIsLoadingProduct,
+    sortPrice,
   });
 
   const { categoryFilters } = useCategoryFilters({
     categoryId: category?.id,
   });
-
-  const { brands, setBrands } = useBrands();
 
   return (
     <>
@@ -50,16 +52,15 @@ function MainContent({
         <div className="row">
           <div className="col-12 d-none d-md-block">
             <ProductFilter
-              brands={brands}
               filters={categoryFilters}
               isLoading={isLoadingProduct}
+              handleSortPrice={setSortPrice}
             ></ProductFilter>
           </div>
         </div>
         <div className="row justify-content-start">
           <div className="col-6 d-md-none">
             <ProductFilterDropdown
-              brands={brands}
               filters={categoryFilters}
             ></ProductFilterDropdown>
           </div>

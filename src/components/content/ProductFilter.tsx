@@ -4,12 +4,12 @@ import { CategoryFilter } from "../../types/category";
 import { BASE_URL } from "../../common/url_sets";
 
 interface Props {
-  brands: Brand[];
   filters: CategoryFilter[];
   isLoading: boolean;
+  handleSortPrice: (sortPrice: string) => void;
 }
 
-function ProductFilter({ brands, filters, isLoading }: Props) {
+function ProductFilter({ filters, isLoading, handleSortPrice }: Props) {
   return (
     <>
       <div className={isLoading === false ? "row mb-3" : "row invisible"}>
@@ -23,6 +23,11 @@ function ProductFilter({ brands, filters, isLoading }: Props) {
                     aria-label={item.name}
                   >
                     <option key={item.name}>{item.name}</option>
+                    {item.values.map((value) => (
+                      <option key={value.id} value={value.id}>
+                        {value.name}
+                      </option>
+                    ))}
                   </select>
                 </div>
               ))}
@@ -30,70 +35,6 @@ function ProductFilter({ brands, filters, isLoading }: Props) {
           </form>
         </div>
 
-        {/* <div className="col-2 p-1 px-0">
-            <select
-              className="form-select product-filter-select"
-              aria-label="Brand"
-              defaultValue=""
-            >
-              <option key='brand'>Thương Hiệu</option>
-              {brands.map((item) => (
-                <option key={item.name} value={item.id}>{item.name}</option>
-              ))}
-            </select>
-          </div>
-          <div className="col-2 p-1">
-            <select
-              className="form-select product-filter-select"
-              aria-label="Price"
-              defaultValue=""
-            >
-              <option key='price'>Giá</option>
-              <option>Dưới 500.000</option>
-              <option>Từ 500.000 đến 1.000.000</option>
-              <option>Từ 1.000.000 đến 1.500.000</option>
-              <option>Trên 1.500.000</option>
-            </select>
-          </div>
-          <div className="col-2 p-1">
-            <select
-              className="form-select product-filter-select"
-              aria-label="Color"
-              defaultValue=""
-            >
-              <option key='color'>Màu Sắc</option>
-              <option>XanhXanh</option>
-              <option>Đỏ</option>
-              <option>Tím</option>
-              <option>Vàng</option>
-              <option>Hồng</option>
-              <option>Nâu</option>
-              <option>Đen</option>
-              <option>Trắng</option>
-              <option>Khác</option>
-            </select>
-          </div>
-          <div className="col-2 p-1">
-            <select
-              className="form-select product-filter-select"
-              aria-label="Size"
-              defaultValue="Size"
-            >
-              <option>Size</option>
-              <option key='35'>35</option>
-              <option key='36'>36</option>
-              <option key='37'>37</option>
-              <option key='38'>38</option>
-              <option key='39'>39</option>
-              <option key='40'>40</option>
-              <option key='41'>41</option>
-              <option key='42'>42</option>
-              <option key='43'>43</option>
-              <option key='44'>44</option>
-              <option key='45'>45</option>
-            </select>
-          </div>
-          <div className="col-2 p-1"></div> */}
         <div className="col-2 p-1">
           <div className="dropdown">
             <span>Sắp xếp: </span>
@@ -107,12 +48,12 @@ function ProductFilter({ brands, filters, isLoading }: Props) {
               className="dropdown-menu my-dropdown-ul"
               aria-labelledby="dropdownSortBtn"
             >
-              <li key="increase-price">
+              <li key="increase-price" onClick={() => handleSortPrice("asc")}>
                 <a className="dropdown-item" href="#">
                   Giá tăng dần
                 </a>
               </li>
-              <li key="decrease-price">
+              <li key="decrease-price" onClick={() => handleSortPrice("desc")}>
                 <a className="dropdown-item" href="#">
                   Giá giảm dần
                 </a>

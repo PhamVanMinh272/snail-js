@@ -4,7 +4,13 @@ export default interface Category {
   parent: number
 };
 
+export interface CategoryFilterValue {
+  id: number,
+  name: string | number,
+}
+
 export interface CategoryFilter {
   id: number,
-  name: string
+  name: string,
+  values: CategoryFilterValue[]
 };

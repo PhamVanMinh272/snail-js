@@ -1,12 +1,10 @@
-import { Brand } from "../../types/brand";
 import { CategoryFilter } from "../../types/category";
 
 interface Props {
-  brands: Brand[];
   filters: CategoryFilter[];
 }
 
-function ProductFilterDropdown({ brands, filters }: Props) {
+function ProductFilterDropdown({ filters }: Props) {
   return (
     <>
       <div className="dropdown mb-3">
