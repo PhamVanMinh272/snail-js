@@ -5,6 +5,8 @@ import ProductFilterDropdown from "./ProductFilterDropdown";
 import { useProducts } from "../../hooks/useProducts";
 import { useCategoryFilters } from "../../hooks/useCategoryFilters";
 import { useState } from "react";
+import { ProductQueryParams } from "../../types/product";
+
 
 interface Props {
   category?: Category;
@@ -17,15 +19,61 @@ function MainContent({
   isLoadingProduct,
   setIsLoadingProduct,
 }: Props) {
-
+  // const [brandIds, setBrandIds] = useState<number[]>([]);
+  // const [minPrice, setMinPrice] = useState<number>(0);
+  // const [maxPrice, setMaxPrice] = useState<number>(0);
   const [sortPrice, setSortPrice] = useState("");
 
+  // const handleFilterChange = (
+  //   brandIds: number[],
+  //   minPrice: number,
+  //   maxPrice: number,
+  //   sortPrice: string
+  // ) => {
+  //   if (brandIds.length > 0) {
+  //     setBrandIds(brandIds);
+  //   }
+  //   if (minPrice > 0) {
+  //     setMinPrice(minPrice);
+  //   }
+  //   if (maxPrice > 0) {
+  //     setMaxPrice(maxPrice);
+  //   }
+  //   if (sortPrice) {
+  //     setSortPrice(sortPrice);
+  //   }
+  // };
+
   // call api
-  const { products } = useProducts({
+  // const { products } = useProducts({
+  //   setIsLoadingProduct,
+  //   categoryId: category?.id,
+  //   brandIds: [],
+  //   minPrice: 0,
+  //   maxPrice: 0,
+  //   sortPrice,
+  // });
+
+  const handleFilterChange = (updatedParams: ProductQueryParams) => {
+    console.log("Filter applied main", updatedParams);
+    setQueryParams((prevParams) => ({
+      ...prevParams, 
+      ...updatedParams
+    }));
+  };
+
+
+
+  const [queryParams, setQueryParams] = useState<ProductQueryParams>({
     categoryId: category?.id,
-    setIsLoadingProduct,
-    sortPrice,
+    brandIds: [],
+    minPrice: 0,
+    maxPrice: 0,
+    sortPrice: '',
   });
+
+  const { products, loading, error } = useProducts(queryParams);
+  
 
   const { categoryFilters } = useCategoryFilters({
     categoryId: category?.id,
@@ -55,6 +103,8 @@ function MainContent({
               filters={categoryFilters}
               isLoading={isLoadingProduct}
               handleSortPrice={setSortPrice}
+              handleFilterChange={handleFilterChange}
+              
             ></ProductFilter>
           </div>
         </div>

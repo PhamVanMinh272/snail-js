@@ -42,8 +42,8 @@ function ListProduct({ isLoading, products, onSelectItem }: Props) {
             >
               <img
                 src={
-                  item.image
-                    ? BASE_IMG + item.image[0].name
+                  item.images
+                    ? BASE_IMG + item.images[0].name
                     : "https://s3.us-west-2.amazonaws.com/www.snail.com/public/625cf0e0-8557-4d85-8550-514c8c381a41.jpg"
                 }
                 className="card-img-top"

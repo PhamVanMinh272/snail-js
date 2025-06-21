@@ -66,3 +66,19 @@ i:hover {
 .my-product-list-container {
   min-height: 100vh;
 }
+
+
+.my-btn {
+  font-size: 11px;
+  border-radius: 0;
+  border: 1px solid #f5f4f4;
+  background-color: #101010;
+  color: #f8f8f8;
+  min-width: 50px;
+}
+
+.my-btn:hover {
+  border: 1px solid #101010;
+  background-color: #101010;
+  color: #f8f8f8;
+}

@@ -7,7 +7,17 @@ export interface Product {
     id: number,
     name: string,
     price: number,
-    image?: Array<Image>
+    images?: Array<Image>
   }
+
+export interface ProductQueryParams {
+  categoryId?: number;
+  sortPrice?: string;
+  brandIds?: Array<number>;
+  minPrice?: number;
+  maxPrice?: number;
+  page?: number;
+  limit?: number;
+}
 
 export default Product;
